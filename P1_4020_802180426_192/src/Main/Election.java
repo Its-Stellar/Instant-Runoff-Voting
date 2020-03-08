@@ -264,7 +264,6 @@ public class Election{
 		 * with the smallest one)
 		 */
 		Set<Ballot> smallest = ballotStoring.get(ballotStoring.size() - 1);
-
 		
 		/*
 		 * Then we do what is mentioned in the comment above, we compare the largest set to see if there is a set smaller than this one, 
