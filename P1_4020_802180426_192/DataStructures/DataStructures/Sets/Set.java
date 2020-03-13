@@ -14,4 +14,5 @@ public interface Set<E> extends Iterable<E> {
 	public boolean isSubSet(Set<E> S2);
 	public void printSet();
 	public E get(int index);
+	public boolean isEqual(Set<E> S2);
 }

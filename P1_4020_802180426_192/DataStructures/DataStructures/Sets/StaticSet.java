@@ -163,4 +163,10 @@ public class StaticSet<E> implements Set<E> {
 		
 		return elements[index];
 	}
+
+	@Override
+	public boolean isEqual(Set<E> S2) {
+		// TODO Auto-generated method stub
+		return this.isSubSet(S2) && S2.isSubSet(this);
+	}
 }

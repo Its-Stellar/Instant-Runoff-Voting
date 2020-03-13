@@ -2,7 +2,7 @@ package Main;
 
 import DataStructures.List.ArrayList;
 import DataStructures.Sets.Set;
-/*
+/**
  * The Ballot
  * 
  * Stores all the votes casted by one person who votes in the Poor Harbor Election
@@ -15,12 +15,11 @@ public class Ballot{
 
 	private int ballotNumber;
 	private ArrayList<Vote> castedVotes;
-	private boolean validBallot;
+	private static boolean validBallot;
 
 	public Ballot(String[] ballotInformation) {
 
 		castedVotes = new ArrayList<>();
-
 		this.ballotNumber = Integer.parseInt(ballotInformation[0].trim()); //the first item in the given array is the ID 
 
 
@@ -44,9 +43,12 @@ public class Ballot{
 	// ballotNum,c1:r1,c2:r2,...,cn:rn => This is the format used to extract information from candidates
 
 
-	/*
+	/**
 	 * Method that is in charge of receiving all of the candidate votes and storing them into
 	 * an instance of Vote (check Vote.java for more info) and saving that vote into a set of type Vote
+	 * 
+	 * @param Ballot Information received from the csv file
+	 * @return nothing
 	 */
 	private void castVotes(String[] ballotInformation) {
 
@@ -63,7 +65,7 @@ public class Ballot{
 	}
 
 
-	/*
+	/**
 	 * Method that returns true if the ballot has no repeated rankings,
 	 * a ranking is not higher than the candidate number or is not empty.
 	 * If any of these conditions is met, then the method return false
@@ -92,13 +94,13 @@ public class Ballot{
 			}
 		}
 
-		//If a candidate is ranked with a higher number than the number of candidates, then its invalid
+		//If a candidate is ranked with a higher number than the number of candidates or the ID , then its invalid
 		for (Vote vote : castedVotes) {
 			if (vote.getRank() > castedVotes.size()) {
 				return false;
 			}
 		}
-		
+
 		if (castedVotes.isEmpty() == true) {
 			return false;
 		}
@@ -108,7 +110,7 @@ public class Ballot{
 
 	}
 
-	/*
+	/**
 	 * Returns the candidateID of the candidate that received a rank of 1 on the ballot
 	 * @param: nothing
 	 * @returns: candidateID regarding the #1 ranked candidate on the ballot
@@ -126,7 +128,7 @@ public class Ballot{
 		return rank;
 	}
 
-	/*
+	/**
 	 * Returns the candidate ID of a specified rank
 	 * 
 	 * @param the rank of a specific candidate
@@ -144,7 +146,7 @@ public class Ballot{
 
 		return ID;
 	}
-	
+
 	public int getFirstChoice() {
 		return getCandidateByRank(1);
 	}

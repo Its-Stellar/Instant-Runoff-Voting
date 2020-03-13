@@ -102,5 +102,10 @@ public class DynamicSet<E> implements Set<E> {
 		// TODO Auto-generated method stub
 		return theSet.get(index);
 	}
+	@Override
+	public boolean isEqual(Set<E> S2) {
+		// TODO Auto-generated method stub
+		return theSet.isEqual(S2);
+	}
 
 }

@@ -1,6 +1,6 @@
 package Main;
 
-/*
+/**
  * The Candidate Running for President
  * Contains it's name and Candidate ID given when he/she decided to run in the election
  * 

@@ -1,6 +1,6 @@
 package Main;
 
-/*
+/**
  * Vote Class
  * 
  * This class stores a specific candidate ID and rank given by a voter 

@@ -1,5 +1,5 @@
 package Main;
-/*
+/**
  * The Eliminated Candidate
  * 
  * This class stores the information that surrounds a candidate that is eliminated from the race
