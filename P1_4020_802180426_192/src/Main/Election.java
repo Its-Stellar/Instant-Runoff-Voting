@@ -25,6 +25,7 @@ import DataStructures.Sets.Set;
  */
 public class Election{
 	//PRIVATE/PUBLIC FIELDS
+	
 	private static int accountedBallots = 0;
 	public static int blankBallot = 0;
 	private static int invalidBallots;
@@ -66,14 +67,8 @@ public class Election{
 		processOutputInformation();
 		
 		/**
-		 * MAKE SURE YOU STORE ballots.csv & candidates.csv IN THE SAME PLACE AS THE src FOLDER IS 
+		 * MAKE SURE YOU STORE ballots.csv & candidates.csv IN THE inputFiles FOLDER IS 
 		 * OTHERWISE THE PROGRAM WILL THROW AN ERROR BECAUSE IT CAN'T FIND THE FILE
-		 * 
-		 * OTHER ballots.csv & candidates.csv CAN BE STORED IN THE inputTestStorage FOLDER, BUT MAKE SURE TO MOVE THE FILE 
-		 * IN THE SAID PATH SO THE PROGRAM WILL RUN 
-		 * 
-		 * AFTER YOU RUN THE PROGRAM, CHECK results.txt TO SEE OUTPUT INFORMATION & RESULTS
-		 * THE PROGRAM DOESN'T PRINT ANYTHING TO THE CONSOLE
 		 */
 		
 	}
@@ -102,7 +97,7 @@ public class Election{
 		String comma = ",";
 		try {
 
-			br = new BufferedReader(new FileReader(csvFile));
+			br = new BufferedReader(new FileReader("inputFiles/" + csvFile));
 			while ((line = br.readLine()) != null) {
 
 				// ballotNum,c1:r1,c2:r2,...,cn:rn
@@ -193,7 +188,7 @@ public class Election{
 		String comma = ",";
 		try {
 
-			br = new BufferedReader(new FileReader(csvFile));
+			br = new BufferedReader(new FileReader("inputFiles/" + csvFile));
 			while ((line = br.readLine()) != null) {
 
 				// Here we do the same thing as the ballot processing, only that we do it with our candidates file
@@ -498,4 +493,5 @@ public class Election{
 			}
 		}
 	}
+	
 }

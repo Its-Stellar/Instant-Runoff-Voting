@@ -1,6 +1,7 @@
 package Main;
 
 import DataStructures.List.ArrayList;
+import DataStructures.List.List;
 import DataStructures.Sets.Set;
 /**
  * The Ballot
@@ -20,8 +21,7 @@ public class Ballot{
 	public Ballot(String[] ballotInformation) {
 
 		castedVotes = new ArrayList<>();
-		this.ballotNumber = Integer.parseInt(ballotInformation[0].trim()); //the first item in the given array is the ID 
-
+		this.ballotNumber = Integer.parseInt(ballotInformation[0].trim()); //the first item in the given array is the ID 		
 
 		//If the Ballot is not empty, we proceed to extract the information from this ballot
 		if(ballotInformation.length >= 2) {
@@ -100,7 +100,7 @@ public class Ballot{
 				return false;
 			}
 		}
-
+		
 		if (castedVotes.isEmpty() == true) {
 			return false;
 		}
